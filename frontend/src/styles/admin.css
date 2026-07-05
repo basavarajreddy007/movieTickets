@@ -1,0 +1,412 @@
+.admin-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fadeIn var(--transition-normal) ease-out;
+}
+
+.admin-header-tabs {
+  display: flex;
+  gap: 1rem;
+  border-bottom: var(--border-light);
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.admin-tab-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: var(--border-light);
+  color: var(--color-text-muted);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.admin-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-primary);
+}
+
+.admin-tab-btn.active {
+  background: var(--color-primary);
+  color: var(--color-text-primary);
+  border-color: rgba(var(--color-primary-raw), 0.4);
+  box-shadow: var(--shadow-neon);
+}
+
+.admin-panel-card {
+  background: rgba(var(--bg-card-raw), 0.3);
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  animation: tabSlideIn var(--transition-normal) forwards;
+}
+
+@keyframes tabSlideIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.admin-panel-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  font-family: var(--font-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 0.75rem;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.admin-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.admin-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.admin-input {
+  background: rgba(var(--bg-dark-raw), 0.45);
+  border: var(--border-light);
+  color: var(--color-text-primary);
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-family: var(--font-primary);
+  transition: var(--transition-fast);
+}
+
+.admin-input:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 10px rgba(var(--color-secondary-raw), 0.25);
+  background: rgba(var(--bg-dark-raw), 0.65);
+}
+
+.admin-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.admin-select {
+  cursor: pointer;
+}
+
+.admin-select option {
+  background-color: var(--bg-card);
+  color: var(--color-text-primary);
+}
+
+.admin-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  width: fit-content;
+}
+
+.admin-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+.admin-submit-btn {
+  background: var(--gradient-neon);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-sm);
+  align-self: flex-start;
+  box-shadow: var(--shadow-neon);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.admin-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(var(--color-primary-raw), 0.4);
+}
+
+.admin-genre-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: var(--border-light);
+}
+
+.admin-genre-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: var(--border-light);
+  color: var(--color-text-muted);
+  padding: 0.4rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.admin-genre-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-primary);
+}
+
+.admin-genre-pill.active {
+  background: rgba(var(--color-secondary-raw), 0.15);
+  color: var(--color-secondary);
+  border-color: rgba(var(--color-secondary-raw), 0.4);
+  box-shadow: 0 0 10px rgba(var(--color-secondary-raw), 0.15);
+}
+
+.admin-cast-builder {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.admin-cast-builder-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.admin-cast-add-btn {
+  background: rgba(var(--color-secondary-raw), 0.1);
+  color: var(--color-secondary);
+  border: 1px dashed rgba(var(--color-secondary-raw), 0.4);
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.admin-cast-add-btn:hover {
+  background: rgba(var(--color-secondary-raw), 0.18);
+  border-style: solid;
+}
+
+.admin-cast-del-btn {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--color-danger);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.admin-cast-del-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.admin-image-preview-group {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 1.5rem;
+  align-items: flex-end;
+}
+
+.admin-preview-img-container {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-sm);
+  border: var(--border-light);
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.admin-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-preview-placeholder {
+  font-size: 0.7rem;
+  color: var(--color-text-dark);
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+
+.admin-price-presets {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.preset-price-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: var(--border-light);
+  color: var(--color-text-muted);
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.preset-price-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-primary);
+}
+
+.admin-hall-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.admin-hall-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: var(--border-light);
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.admin-hall-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.admin-hall-card.active {
+  background: rgba(var(--color-primary-raw), 0.12);
+  border-color: rgba(var(--color-primary-raw), 0.4);
+  box-shadow: 0 0 12px rgba(var(--color-primary-raw), 0.2);
+}
+
+.admin-hall-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.admin-hall-card-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.sales-report-table-wrapper {
+  overflow-x: auto;
+}
+
+.sales-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.sales-table th {
+  padding: 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.sales-table td {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sales-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.sales-ref {
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.sales-user {
+  font-weight: 600;
+}
+
+.sales-seats {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.sales-seat-tag {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.sales-amount {
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+@media (max-width: 992px) {
+  .admin-hall-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-form-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .admin-image-preview-group {
+    grid-template-columns: 1fr;
+  }
+  .admin-preview-img-container {
+    align-self: flex-start;
+  }
+}

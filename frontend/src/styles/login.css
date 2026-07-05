@@ -1,0 +1,189 @@
+.login-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 180px);
+  padding: 2rem 0;
+  animation: fadeIn var(--transition-normal) ease-out;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(var(--bg-card-raw), 0.45);
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card), 0 0 30px rgba(var(--color-primary-raw), 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.login-tabs {
+  display: flex;
+  border-bottom: var(--border-light);
+}
+
+.login-tab-btn {
+  flex: 1;
+  padding: 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-align: center;
+  transition: var(--transition-fast);
+}
+
+.login-tab-btn:hover {
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.login-tab-btn.active {
+  color: var(--color-secondary);
+  background: rgba(var(--color-secondary-raw), 0.05);
+  position: relative;
+}
+
+.login-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gradient-neon);
+}
+
+.login-form-body {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login-form-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-form-header h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  font-family: var(--font-secondary);
+  background: var(--gradient-neon);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.login-form-header p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.login-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.login-input-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.login-input-wrapper {
+  position: relative;
+}
+
+.login-input-icon {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-dark);
+}
+
+.login-input-field {
+  width: 100%;
+  background: rgba(var(--bg-dark-raw), 0.4);
+  border: var(--border-light);
+  color: var(--color-text-primary);
+  padding: 0.8rem 3rem 0.8rem 3rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-family: var(--font-primary);
+  transition: var(--transition-fast);
+}
+
+.login-input-field:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 12px rgba(var(--color-primary-raw), 0.2);
+  background: rgba(var(--bg-dark-raw), 0.6);
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.password-toggle-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.login-error-alert {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: var(--color-danger);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.login-success-alert {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: var(--color-success);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.login-submit-btn {
+  background: var(--gradient-neon);
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.9rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-neon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.login-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(var(--color-primary-raw), 0.4);
+}
