@@ -4,7 +4,7 @@ import { ArrowLeft, Clock, Calendar, Star, Armchair } from 'lucide-react';
 import '../styles/details.css';
 
 const MovieDetails = () => {
-  const { selectedMovie, selectShowtime, goHome } = useBooking();
+  const { selectedMovie, selectShowtime, goHome, fetchShowtimes } = useBooking();
   const [showtimes, setShowtimes] = useState([]);
   
   const getLocalDateString = (dateObj) => {
@@ -26,9 +26,7 @@ const MovieDetails = () => {
     const fetchMovieShowtimes = async () => {
       setLoadingShowtimes(true);
       try {
-        const response = await fetch(`/api/movies/${selectedMovie.id}/showtimes`);
-        if (!response.ok) throw new Error('Failed to load showtimes');
-        const data = await response.json();
+        const data = await fetchShowtimes(selectedMovie.id);
         setShowtimes(data);
       } catch (err) {
         console.error(err);
@@ -38,7 +36,7 @@ const MovieDetails = () => {
     };
 
     fetchMovieShowtimes();
-  }, [selectedMovie]);
+  }, [selectedMovie, fetchShowtimes]);
 
   if (!selectedMovie) {
     return (
